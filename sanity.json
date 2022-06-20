@@ -1,0 +1,34 @@
+{
+  "root": true,
+  "project": {
+    "name": "abteilung.ch Clone"
+  },
+  "api": {
+    "projectId": "dmir81f8",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "asset-source-unsplash",
+    "media-library",
+    "dashboard-widget-netlify",
+    "@sanity/dashboard"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "src/dashboardConfig.js",
+      "implements": "part:@sanity/dashboard/config"
+    }
+  ]
+}
