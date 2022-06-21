@@ -11,6 +11,7 @@ import categoryProduct from './categoryProduct'
 import caseStudy from './caseStudy'
 import post from './post'
 import product from './product'
+import service from './service'
 import author from './author'
 import gallery from './gallery'
 import faq from './faq'
@@ -27,6 +28,7 @@ export default createSchema({
     // in the studio.
     post,
     product,
+    service,
     caseStudy,
     author,
     category,

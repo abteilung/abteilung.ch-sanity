@@ -1,10 +1,10 @@
-import { MdOutlineCases } from 'react-icons/md'
+import { MdFavoriteBorder } from 'react-icons/md'
 
 export default {
-  name: 'casestudy',
-  title: 'Case Study',
+  name: 'service',
+  title: 'Service',
   type: 'document',
-  icon: MdOutlineCases,
+  icon: MdFavoriteBorder,
   fields: [
     {
       name: 'subtitle',
@@ -21,9 +21,14 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title',
+        source: 'subtitle',
         maxLength: 96,
       },
+    },
+    {
+      name: 'teaser',
+      title: 'Teaser',
+      type: 'blockContent',
     },
     {
       name: 'mainImage',
@@ -39,16 +44,12 @@ export default {
       type: 'url',
     },
     {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'categoryProduct'}}],
-    },
-    {
-      name: 'productReferences',
-      title: 'Product References',
-      type: 'array',
-      of: [{type: 'reference', to: [{type: 'product'}, {type: 'service'}] }],
+      name: 'productIcon',
+      title: 'Product Icon',
+      type: 'image',
+      options: {
+        hotspot: false,
+      },
     },
     {
       name: 'body',
