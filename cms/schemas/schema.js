@@ -5,16 +5,16 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
-import blockContent from './blockContent'
-import category from './category'
-import categoryProduct from './categoryProduct'
-import caseStudy from './caseStudy'
-import post from './post'
-import product from './product'
-import service from './service'
-import author from './author'
-import gallery from './gallery'
-import faq from './faq'
+import blockContent from './array/blockContent'
+import category from './documents/category'
+import categoryProduct from './documents/categoryProduct'
+import caseStudy from './documents/caseStudy'
+import post from './documents/post'
+import product from './documents/product'
+import service from './documents/service'
+import author from './documents/author'
+import gallery from './objects/gallery'
+import faq from './objects/faq'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
