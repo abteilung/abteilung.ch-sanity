@@ -44,7 +44,7 @@ export default {
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'categoryProduct'}}],
+      of: [{type: 'reference', to: {type: 'categoryReference'}}],
     },
     {
       name: 'productReferences',
