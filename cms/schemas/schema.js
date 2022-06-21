@@ -15,6 +15,9 @@ import service from './documents/service'
 import author from './documents/author'
 import gallery from './objects/gallery'
 import faq from './objects/faq'
+import navigation from './documents/navigation'
+import navItem from './objects/navItem'
+import link from './objects/link'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -38,5 +41,8 @@ export default createSchema({
     blockContent,
     gallery,
     faq,
+    navigation,
+    navItem,
+    link,
   ]),
 })
