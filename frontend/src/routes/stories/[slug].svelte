@@ -39,12 +39,6 @@
   import CodeBlock from '$lib/components/content/CodeBlock.svelte';
   import HighlightMark from '$lib/components/content/HighlightMark.svelte';
 
-  import EmailShare from '$lib/components/share/EmailShare.svelte';
-  import LinkedInShare from '$lib/components/share/LinkedInShare.svelte';
-  import FacebookShare from '$lib/components/share/FacebookShare.svelte';
-  import WhatsAppShare from '$lib/components/share/WhatsAppShare.svelte';
-  import TwitterShare from '$lib/components/share/TwitterShare.svelte';
-
   const customBlockComponents: CustomBlockComponents = {
     figure: FigureBlock,
     code: CodeBlock,
@@ -62,7 +56,7 @@
   export let blocks: Sanity.Schema.BlockContent;
 
   let url: string;
-  $: url = `https://paullj.me/stories/${slug}`;
+  $: url = `https://abteilung.ch/stories/${slug}`;
 </script>
 
 <SEO title="{title} | Paul Lavender-Jones"></SEO>
@@ -83,11 +77,6 @@
     <p class="text-xs font-bold tracking-widest text-gray-700 text-opacity-50 uppercase dark:text-gray-200 dark:text-opacity-70 md:text-sm">
       Share via
     </p>
-    <EmailShare subject="'{title}' on paullj.me" body="Read this post at {url}" />
-    <LinkedInShare {url} />
-    <FacebookShare {url} />
-    <TwitterShare text="Read this post at {url}" {url} />
-    <WhatsAppShare text="Read this post at {url}" />
     <span class="text-gray-400">
       &middot;
     </span>
