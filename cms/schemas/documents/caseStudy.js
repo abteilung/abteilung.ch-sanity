@@ -3,7 +3,7 @@ import { MdOutlineCases } from 'react-icons/md'
 
 export default {
   name: 'casestudy',
-  title: 'Case Study',
+  title: 'Case Studies',
   type: 'document',
   icon: MdOutlineCases,
   fields: [

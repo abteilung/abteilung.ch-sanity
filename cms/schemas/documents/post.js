@@ -3,7 +3,7 @@ import { MdOutlineTextSnippet } from 'react-icons/md'
 
 export default {
   name: 'post',
-  title: 'Post',
+  title: 'Posts',
   type: 'document',
   icon: MdOutlineTextSnippet,
   fields: [

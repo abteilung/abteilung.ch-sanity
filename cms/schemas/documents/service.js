@@ -2,7 +2,7 @@ import { MdFavoriteBorder } from 'react-icons/md'
 
 export default {
   name: 'service',
-  title: 'Service',
+  title: 'Services',
   type: 'document',
   icon: MdFavoriteBorder,
   fields: [

@@ -3,7 +3,7 @@ import { MdOutlineCategory } from 'react-icons/md'
 
 export default {
   name: 'categoryProduct',
-  title: 'Category (Product)',
+  title: 'Categories (Products)',
   type: 'document',
   icon: MdOutlineCategory,
   fields: [

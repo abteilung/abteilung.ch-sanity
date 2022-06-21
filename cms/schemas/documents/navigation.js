@@ -5,7 +5,7 @@ import { GrNavigate } from "react-icons/gr";
 
 export default {
   name: 'navigation',
-  title: 'Navigation',
+  title: 'Navigations',
   type: 'document',
   icon: GrNavigate,
   fields: [

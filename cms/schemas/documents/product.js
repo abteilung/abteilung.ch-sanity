@@ -2,7 +2,7 @@ import { MdProductionQuantityLimits } from 'react-icons/md'
 
 export default {
   name: 'product',
-  title: 'Product',
+  title: 'Products',
   type: 'document',
   icon: MdProductionQuantityLimits,
   fields: [

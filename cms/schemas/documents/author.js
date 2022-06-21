@@ -3,7 +3,7 @@ import { MdOutlinePortrait } from 'react-icons/md'
 
 export default {
   name: 'author',
-  title: 'Author',
+  title: 'Authors',
   type: 'document',
   icon: MdOutlinePortrait,
   fields: [
