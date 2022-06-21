@@ -33,9 +33,9 @@
   <List items={posts} let:item>
     <h2 slot="title" id="posts" class="font-serif text-xl flex items-center space-x-2">
       <a href="/stories" sveltekit:prefetch class="hover:underline">
-        Blog
+        Stories
       </a>
     </h2>
-    <PostListItem slot="item" title={item.title} slug={item.slug} date={item.publishedAt}></PostListItem>
+    <PostListItem slot="item" title={item.title} slug={item.slug} date={item.publishedAt} image={item.mainImage} />
   </List>
 </div>

@@ -7,6 +7,7 @@ const query = groq`
   *[_type == "post" && defined(slug.current) && publishedAt < now()]| order(publishedAt desc) [$start..$end] {
     title,
     "slug": slug.current,
+    mainImage,
     publishedAt,
   }
 `;
@@ -19,9 +20,10 @@ export const get = async () => {
   });
 
   if (results) {
-    const posts = results.map(({ title, slug, publishedAt }) => ({
+    const posts = results.map(({ title, slug, mainImage, publishedAt }) => ({
       title,
       slug,
+      mainImage,
       publishedAt: format(parseISO(publishedAt), "EEE do MMMM ''yy")
     }));
 

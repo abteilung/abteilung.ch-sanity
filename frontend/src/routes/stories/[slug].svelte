@@ -58,7 +58,7 @@
   export let subtitle: string;
   export let publishedAt: string;
   export let readingTime: string;
-  export let mainImage: string;
+  export let mainImage: ImageProps;
   export let blocks: Sanity.Schema.BlockContent;
 
   let url: string;
