@@ -2,7 +2,7 @@
 	import type { Load } from '@sveltejs/kit';
 
   export const load: Load = async ({ fetch }) => {
-    const res = await fetch('/posts.json');
+    const res = await fetch('/stories.json');
 
 		if (res) {
 			return {
@@ -14,7 +14,7 @@
 
 		return {
 			status: res.status,
-			error: new Error(`Could not load '/posts.json'`)
+			error: new Error(`Could not load '/stories.json'`)
 		};
   }
 </script>
@@ -32,7 +32,7 @@
 <div class="mb-12 sm:mb-24">
   <List items={posts} let:item>
     <h2 slot="title" id="posts" class="font-serif text-xl flex items-center space-x-2">
-      <a href="/posts" sveltekit:prefetch class="hover:underline">
+      <a href="/stories" sveltekit:prefetch class="hover:underline">
         Blog
       </a>
     </h2>

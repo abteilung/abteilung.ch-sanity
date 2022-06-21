@@ -16,6 +16,7 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      validation: Rule => Rule.required(),
       options: {
         source: 'name',
         maxLength: 96,
@@ -28,6 +29,12 @@ export default {
       options: {
         hotspot: true,
       },
+    },
+    {
+      name: 'email',
+      title: 'E-Mail',
+      type: 'string',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'bio',

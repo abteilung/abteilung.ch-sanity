@@ -21,6 +21,7 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      validation: Rule => Rule.required(),
       options: {
         source: 'title',
         maxLength: 96,
@@ -55,6 +56,7 @@ export default {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'body',

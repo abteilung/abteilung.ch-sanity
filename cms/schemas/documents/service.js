@@ -20,6 +20,7 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      validation: Rule => Rule.required(),
       options: {
         source: 'subtitle',
         maxLength: 96,

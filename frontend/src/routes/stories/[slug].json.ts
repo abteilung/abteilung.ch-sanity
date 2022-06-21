@@ -7,7 +7,8 @@ const query = groq`
   *[_type == "post" && slug.current == $slug][0] {
     title,
     publishedAt,
-    description,
+    mainImage,
+    subtitle,
     "slug": slug.current,
     body[] {
       ...,

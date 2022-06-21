@@ -14,10 +14,5 @@
 </figure>
 
 <style>
-  .featured {
-    @apply lg:(w-[110%] ml-[-5%]);
-  }
-  .not-featured {
-    @apply max-w-screen-sm;
-  }
+ 
 </style>
