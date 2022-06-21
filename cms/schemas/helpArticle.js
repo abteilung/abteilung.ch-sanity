@@ -1,8 +1,8 @@
 // helpArticle.js
 export default {
   name: 'helpArticle',
-  type: 'document',
   title: 'Help article',
+  type: 'document',
   fields: [
     {
       name: 'title',

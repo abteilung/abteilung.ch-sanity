@@ -1,8 +1,8 @@
 // faq.js
 export default {
   name: 'faq',
-  type: 'object',
   title: 'Frequently asked question',
+  type: 'object',
   fields: [
     {
       name: 'question',
