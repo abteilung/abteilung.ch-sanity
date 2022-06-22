@@ -31,6 +31,7 @@
 </script>
 
 <script lang="ts">
+  import SanityImage from "./SanityImage.svelte";
   import SEO from "svelte-seo";
   import { PortableText } from '@portabletext/svelte';
   import type { CustomBlockComponents, CustomSpanComponents } from 'sveltekit-pote';
@@ -62,6 +63,10 @@
 <SEO title="{title} | Paul Lavender-Jones"></SEO>
 
 <div class="mb-4 sm:mb-24">
+  <div>
+    <SanityImage {mainImage} loading="eager" />
+
+  </div>
   <div>
     <p class="text-xs font-bold tracking-widest text-gray-700 text-opacity-50 uppercase dark:text-green-200 dark:text-opacity-70 md:text-sm">
       {publishedAt}

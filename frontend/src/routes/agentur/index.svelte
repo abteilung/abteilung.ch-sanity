@@ -1,8 +1,8 @@
 <script lang="ts" context="module">
 	import type { Load } from '@sveltejs/kit';
 
-  export const load: Load = async ({ fetch }) => {
-    const res = await fetch('/agentur.json');
+    export const load: Load = async ({ fetch }) => {
+        const res = await fetch('/agentur.json');
 
 		if (res) {
 			return {
@@ -14,9 +14,9 @@
 
 		return {
 			status: res.status,
-			error: new Error(`Could not load '/stories.json'`)
+			error: new Error(`Could not load '/agentur.json'`)
 		};
-  }
+    }
 </script>
 
 
@@ -36,8 +36,8 @@
 <div class="mb-12 sm:mb-24">
     <List items={authors} let:item>
       <h2 slot="title" id="posts" class="font-serif text-xl flex items-center space-x-2">
-        <a href="/stories" sveltekit:prefetch class="hover:underline">
-          Stories
+        <a href="/agentur" sveltekit:prefetch class="hover:underline">
+          Agentur
         </a>
       </h2>
       <AuthorListItem slot="item" name={item.name} slug={item.slug} image={item.image} />

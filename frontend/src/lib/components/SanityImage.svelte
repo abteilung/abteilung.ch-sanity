@@ -1,9 +1,10 @@
 <!-- SanityImage.svelte -->
-<script>
+<script lang="ts">
 	import getImageProps from '../utils/getImageProps';
 
-	export let image;
-	export let loading = "lazy"
+	export let image: ImageProps;
+	export let loading: string = "lazy"
+	export let imageClass: string = ""
 
   function getImageAspectRatio(image) {
     if (!image?.asset?._ref) {
@@ -18,10 +19,10 @@
     const [width, height] = dimensions.split("x").map(Number);
     return width / height;
   }
-
 </script>
 
 <img
+  class={imageClass}
   style="aspect-ratio: ${getImageAspectRatio(image)};"
   {loading}
   fetchPriority={loading === "eager" ? "high" : undefined}
@@ -29,8 +30,7 @@
   {
     ...getImageProps({
       image,
-      maxWidth: 800
+      maxWidth: 800,
     })
   }
 />
-

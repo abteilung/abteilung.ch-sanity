@@ -7,7 +7,7 @@
     const res = await fetch(`/agentur/${slug}.json`);
 
 		if (res.ok) {
-      const { name, bio, subtitle, image, publishedAt, slug } = await res.json() as Post;
+      const { name, bio, image, slug } = await res.json() as Post;
 
 			return {
 				props: {
@@ -21,7 +21,7 @@
 
 		return {
 			status: res.status,
-			error: new Error(`Could not load '/agentur.json'`)
+			error: new Error(`Could not load '/agentur/${slug}.json'`)
 		};
   }
 </script>

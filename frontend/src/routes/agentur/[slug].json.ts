@@ -4,7 +4,7 @@ import { generateImages } from '$lib/utils/generateImage';
 
 const query = groq`
   *[_type == "author" && slug.current == $slug][0] {
-    title,
+    name,
     image,
     "slug": slug.current,
     bio[] {
@@ -16,7 +16,6 @@ const query = groq`
     }
   }
 `;
-
 
 export const get = async ({ params }) => {
   const { slug } = params;
