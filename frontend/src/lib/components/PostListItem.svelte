@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Image from "./Image.svelte";
+  import SanityImage from "./SanityImage.svelte";
 
 	export let title: string;
 	export let slug: string;
@@ -12,7 +12,7 @@
     {date}
   </time>
 
-  <Image {...image}></Image>
+  <SanityImage {image} loading="eager" />
   <div>
     <a href="/stories/{slug}" sveltekit:prefetch class="text-base transition-shadow sm:text-lg shadow-thin hover:shadow-thick ring-green-500 ring-opacity-30 dark:ring-opacity-70">
       {title}

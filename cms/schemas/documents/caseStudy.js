@@ -31,10 +31,23 @@ export default {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
-      options: {
-        hotspot: true,
-      },
+      description: "💡 highest quality possible without upscaling the image (up to 2500px).",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          title: "Accessibility label for the image",
+          description:
+            'Help make the site more accessible & SEO-friendly with a short textual description of the image, such as "screenshot of the dashboard app"',
+          type: "string",
+          validation: Rule => Rule.required(),
+          options: {
+            isHighlighted: true,
+          },
+        },
+      ],      
     },
+
     {
       name: 'youtube',
       title: 'Youtube-Movie',
