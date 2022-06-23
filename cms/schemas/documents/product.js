@@ -63,6 +63,20 @@ export default {
       options: {
         hotspot: false,
       },
+      fields: [
+        {
+          name: "alt",
+          title: "Accessibility label for the image",
+          description:
+            'Help make the site more accessible & SEO-friendly with a short textual description of the image, such as "screenshot of the dashboard app"',
+          type: "string",
+          validation: Rule => Rule.required(),
+          options: {
+            isHighlighted: true,
+          },
+        },
+      ],      
+
     },
     {
       name: 'body',
