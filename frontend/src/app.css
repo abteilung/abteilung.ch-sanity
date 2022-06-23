@@ -1,3 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-base-100;
+    }
+    html {
+        @apply font-sans font-light;
+    }
+
+    h1, .h1, h2, .h2, h3, .h3 {
+        @apply text-black;
+    }
+
+    h1, .h1, h2.h1, h3.h1, h4.h1, h5.h1 {
+        @apply mb-2 font-headings text-xl md:text-2xl xl:text-3xl font-light xl:mb-4 leading-tight;
+        i, em {
+            @apply not-italic text-accent-focus;
+        }
+        .headGrid & i, 
+        .headGrid & em {
+            @apply not-italic !text-accent-focus;
+        }
+        u {
+            @apply underline-offset-[6px] decoration-2 md:underline-offset-8 md:decoration-[2.5px] lg:decoration-[3px] xl:decoration-4;
+        }
+    }
+
+    h2, .h2, h1.h2, h4.h2, h5.h2 {
+        @apply mb-2 font-bold font-headings text-lg md:text-[27px] lg:text-xl !leading-tight;
+        i, em {
+            @apply not-italic text-accent-focus;
+        }
+    }
+
+    h3, .h3, h1.h3, h2.h3, .h4.h3, h5.h3 {
+        @apply text-base md:text-[21px] lg:text-[27px] font-headings !leading-tight font-bold;
+        i, em {
+            @apply not-italic text-accent-focus;
+        }
+        i strong {
+            @apply not-italic text-base-300;
+        }
+    }
+    .testimonial .lead p {
+    }
+
+    h4, .h4, h1.h4, h2.h4, h3.h4, h5.h4 {
+        @apply font-sans font-bold text-base;
+        .megaMenu & {
+            @apply mb-4;
+        }
+    }
+
+    h5, .h5, h1.h5, h2.h5, h3.h5 {
+        @apply font-headings font-normal text-base;
+    }
+}

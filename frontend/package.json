@@ -12,6 +12,7 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
+		"@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
 		"@emagining/sveltekit-pote": "^0.0.5",
 		"@movingbrands/svelte-portable-text": "^0.0.11",
 		"@playwright/test": "^1.22.2",

@@ -4,6 +4,7 @@ import { sanity } from '$lib/sanity';
 const query = groq`
   *[_type == "product"] {
     title,
+    subtitle,
     "slug": slug.current,
     productIcon,
   }
@@ -16,8 +17,9 @@ export const get = async () => {
   });
 
   if (results) {
-    const products = results.map(({ title, slug, productIcon }) => ({
+    const products = results.map(({ title, subtitle, slug, productIcon }) => ({
       title,
+      subtitle,
       slug,
       productIcon,
     }));

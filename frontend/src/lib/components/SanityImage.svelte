@@ -5,6 +5,7 @@
 	export let image: ImageProps;
 	export let loading: string = "lazy"
 	export let imageClass: string = ""
+	export let maxWidth: integer = 800
 
   function getImageAspectRatio(image) {
     if (!image?.asset?._ref) {
@@ -30,7 +31,7 @@
   {
     ...getImageProps({
       image,
-      maxWidth: 800,
+      maxWidth,
     })
   }
 />

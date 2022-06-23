@@ -4,7 +4,7 @@
   $: currentPath = $page.url.pathname.substr(0, $page.url.pathname.lastIndexOf('/')) || $page.url.pathname;
 </script>
 
-<div class="flex flex-row justify-between w-full py-1 sm:py-4 items-center">
+<header class="flex flex-row justify-between w-full py-1 sm:py-4 items-center">
   <nav class="flex flex-row space-x-4">
     {#if currentPath !== '/'}
      <div class="text-lg sm:text-base">
@@ -14,4 +14,11 @@
       </div>
     {/if}
   </nav>
-</div>
+</header>
+
+
+<style lang="postcss">
+  header {
+    @apply bg-white;
+  }
+</style>

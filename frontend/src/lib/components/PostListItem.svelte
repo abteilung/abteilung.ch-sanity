@@ -3,19 +3,31 @@
 
 	export let title: string;
 	export let slug: string;
-	export let date: string;
 	export let image: ImageProps;
 </script>
 
-<li class="flex items-center space-x-2">
-  <time class="text-xs font-extrabold tracking-widest text-gray-600 uppercase sm:text-sm dark:text-gray-400">
-    {date}
-  </time>
-
-  <SanityImage {image} loading="eager" />
-  <div>
-    <a href="/stories/{slug}" sveltekit:prefetch class="text-base transition-shadow sm:text-lg shadow-thin hover:shadow-thick ring-green-500 ring-opacity-30 dark:ring-opacity-70">
+<div class="card group">
+  <a href="/story/{slug}" sveltekit:prefetch>
+    <div class="card-content">
       {title}
-    </a>
-  </div>
-</li>
+      <div class="card-button"><div class="icon">x</div></div>
+    </div>
+    <SanityImage {image} loading="eager" imageClass="card-image group-hover:scale-105 duration-300" />
+  </a>
+</div>
+
+
+<style lang="postcss">
+  .card {
+    @apply relative overflow-hidden isolate cursor-pointer aspect-video;
+  } 
+  .card-content {
+    @apply absolute bg-black bg-opacity-70 text-white bottom-0 left-0 py-4 pl-4 pr-12 z-10 w-2/3 text-lg;
+  }
+  .card-image {
+    @apply object-cover h-full object-center scale-100 transition-all;
+  }
+  .card-button {
+    @apply absolute translate-x-1/2 right-0 bottom-0 w-16 h-16 bg-gradient-to-tl from-primary to-secondary flex justify-center items-center group-hover:-right-8 duration-300 transition-all;
+  }
+</style>

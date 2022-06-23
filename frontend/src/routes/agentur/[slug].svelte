@@ -60,7 +60,7 @@
     </h1>
 
   </div>
-  <article class="mt-4 w-full prose sm:prose max-w-85ch sm:mt-12 dark:prose-dark prose-green">
+  <article class="mt-4 w-full">
     <PortableText blocks={[blocks]} {customBlockComponents} {customSpanComponents} />
   </article>
 </div>
