@@ -1,10 +1,10 @@
-// import { CaretCircleDown } from 'phosphor-react'
+import { MdArrowDro } from 'react-icons/md'
 
 export default {
   title: 'Accordion',
   name: 'accordion',
   type: 'object',
-  // icon: CaretCircleDown,
+  icon: MdArrowDro,
   fields: [
     {
       title: 'Title',

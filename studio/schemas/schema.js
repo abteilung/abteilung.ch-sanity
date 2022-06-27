@@ -5,11 +5,13 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
+import simplePortableText from './objects/portable-simple'
 import blockContent from './array/blockContent'
 import category from './documents/category'
 import categoryProduct from './documents/categoryProduct'
 import categoryReference from './documents/categoryReference'
 import caseStudy from './documents/caseStudy'
+import page from './documents/page'
 import post from './documents/post'
 import product from './documents/product'
 import service from './documents/service'
@@ -21,7 +23,8 @@ import navItem from './objects/navItem'
 import accordions from './objects/accordions'
 import accordion from './objects/accordion'
 import link from './objects/link'
-import simplePortableText from './objects/portable-simple'
+
+import generalSettings from './documents/settings-general'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -33,6 +36,8 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    generalSettings,
+    page,
     post,
     category,
     product,
@@ -52,5 +57,6 @@ export default createSchema({
     navItem,
     link,
     simplePortableText,
+
   ]),
 })
