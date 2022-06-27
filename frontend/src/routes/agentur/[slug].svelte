@@ -50,8 +50,6 @@
   $: url = `https://abteilung.ch/agentur/${slug}`;
 </script>
 
-<SEO title="{name} | Paul Lavender-Jones"></SEO>
-
 <div class="mb-4 sm:mb-24">
   <div>
 

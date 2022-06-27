@@ -16,7 +16,7 @@
 			status: res.status,
 			error: new Error(`Could not load '/agentur.json'`)
 		};
-    }
+  }
 </script>
 
 
@@ -28,10 +28,7 @@
     export let authors: Author[];
 </script>
   
-<SEO title="Agentur | Abteilung.ch" description="Some of my thoughts and writings"></SEO>
-
 <h1>Agentur</h1>
-
 
 <div class="mb-12 sm:mb-24">
     <List items={authors} let:item>

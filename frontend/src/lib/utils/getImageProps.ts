@@ -52,7 +52,7 @@ export default function getImageProps({ image, maxWidth = 1200 }) {
       .join(", "),
     sizes: `(max-width: ${maxWidth}px) 100vw, ${
       // Ensure browsers use best quality by suggesting the image is slightly larger than it actually is
-      maxWidth
+      maxWidth + 20
     }px`,
   };
 

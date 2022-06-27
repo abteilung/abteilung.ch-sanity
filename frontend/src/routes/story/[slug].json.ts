@@ -20,35 +20,43 @@ const query = groq`
   }
 `;
 
+export type QueryResult = Story
 
 export const get = async ({ params }) => {
   const { slug } = params;
 
   const result = await sanity.fetch<Post>(query, { slug });
 
-  const transformedBody = result.body.map((x) => {
-    if(x._type === 'figure') {
-      return {
-        ...x,
-        image: generateImages(x.image)
-      }
-    } else {
-      return x;
-    }
-  });
-
   if (result) {
+    const transformedBody = result.body?.map((block) => {
+      if(block._type === 'figure') {
+        return {
+          ...block,
+          image: block.image ? generateImages(block.image) : null
+        }
+      } else {
+        return block
+      }
+    });
+
+    // const transformedMembers = result.members?.map(({ name, avatar}) => ({
+    //   name,
+    //   avatar: avatar ? generateImage(avatar, 100, 100) : null
+    // }));
+
     return {
       body: {
         ...result,
         body: transformedBody ?? [],
-        publishedAt: format(parseISO(result.publishedAt), "EEE do MMMM ''yy")
+        // members: transformedMembers ?? [],
+        mainImage: result.mainImage ? generateImages(result.mainImage) : null,
+        publishedAt: result.publishedAt ? format(parseISO(result.publishedAt), "MMMM ''yy") : "N/A"
       },
       headers: { 'Content-Type': 'application/json' },
       status: 200,
     }
   }
-
+  
   return {
     status: 404,
     error: new Error(`Could not find post /${slug} from Sanity.io`)

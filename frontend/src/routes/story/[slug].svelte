@@ -1,24 +1,18 @@
 <script lang="ts" context="module">
   import type { Load } from '@sveltejs/kit';;
-  import { getReadingTime } from '$lib/utils/getReadingTime';
-  import { blocksToText } from '$lib/utils/blocksToText';
+  import type { QueryResult } from './[slug].json';
 
   export const load: Load = async ({ url, params, fetch }) => {
     const { slug } = params;
     const res = await fetch(`/story/${slug}.json`);
 
 		if (res.ok) {
-      const { title, body, subtitle, mainImage, publishedAt, slug } = await res.json() as Post;
+      const story = await res.json() as QueryResult;
 
 			return {
 				props: {
-          title,
-          subtitle, 
-          mainImage,
-          publishedAt,
-          slug,
-          blocks: body,
-          readingTime: getReadingTime(blocksToText(body))
+          ...story,
+          blocks: story.body,
 				}
 			};
 		}
@@ -62,8 +56,10 @@
 
 <SEO title="{title} | Paul Lavender-Jones"></SEO>
 
+<div class="container bg-primary h-[800px] overflow-hidden">
+  <SanityImage image={mainImage} loading="eager" imageClass="bg-cover w-full bg-center" />
+</div>
   <div>
-    <SanityImage image={mainImage} loading="eager" maxWidth="1600" />
 
   </div>
   <div>
@@ -89,5 +85,5 @@
     </p>
   </div>
   <article class="mt-4 w-full">
-    <PortableText blocks={[blocks]} {customBlockComponents} {customSpanComponents} />
+    <PortableText {blocks} {customBlockComponents} {customSpanComponents} />
   </article>

@@ -7,11 +7,17 @@ export default {
     title: 'Link',
     fields: [
       {
-      title: 'Internal Link',
-      name: 'internalLink',
-      description: 'Select pages for navigation',
-      type: 'reference',
-      to: [{ type: 'service' },{ type: 'post' }], 
+        title: 'Internal Link',
+        name: 'internalLink',
+        description: 'Select pages for navigation',
+        type: 'reference',
+        to: [{ type: 'service' },{ type: 'post' }], 
+      },
+      {
+        title: 'Free Link',
+        name: 'freeLink',
+        description: 'Enter Name and Slug',
+        type: 'string',
       },
       {
         name: 'externalUrl',

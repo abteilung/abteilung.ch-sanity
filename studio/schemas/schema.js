@@ -18,7 +18,10 @@ import gallery from './objects/gallery'
 import faq from './objects/faq'
 import navigation from './documents/navigation'
 import navItem from './objects/navItem'
+import accordions from './objects/accordions'
+import accordion from './objects/accordion'
 import link from './objects/link'
+import simplePortableText from './objects/portable-simple'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -43,8 +46,11 @@ export default createSchema({
     blockContent,
     gallery,
     faq,
+    accordions,
+    accordion,
     navigation,
     navItem,
     link,
+    simplePortableText,
   ]),
 })

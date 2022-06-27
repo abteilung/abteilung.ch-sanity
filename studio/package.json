@@ -22,6 +22,7 @@
     "@sanity/default-login": "^2.30.1",
     "@sanity/desk-tool": "^2.30.1",
     "@sanity/eslint-config-studio": "^2.0.0",
+    "@sanity/hierarchical-document-list": "^1.1.0",
     "@sanity/vision": "^2.30.1",
     "eslint": "^8.6.0",
     "prop-types": "^15.7",
