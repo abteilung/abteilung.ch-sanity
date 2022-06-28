@@ -46,15 +46,13 @@
   export let slug: string;
   export let subtitle: string;
   export let publishedAt: string;
-  export let readingTime: string;
   export let mainImage: ImageProps;
   export let blocks: Sanity.Schema.BlockContent;
+  export let post: Sanity.Schema.BlockContent;
 
   let url: string;
   $: url = `https://abteilung.ch/story/${slug}`;
 </script>
-
-<SEO title="{title} | Paul Lavender-Jones"></SEO>
 
 <div class="container bg-primary h-[800px] overflow-hidden">
   <SanityImage image={mainImage} loading="eager" imageClass="bg-cover w-full bg-center" />
@@ -80,10 +78,14 @@
     <span class="text-gray-400">
       &middot;
     </span>
-    <p class="ml-8 text-xs font-bold tracking-widest text-gray-700 text-opacity-50 uppercase dark:text-gray-200 dark:text-opacity-70 md:text-sm">
-      {readingTime} minute read
-    </p>
   </div>
   <article class="mt-4 w-full">
-    <PortableText {blocks} {customBlockComponents} {customSpanComponents} />
+    <PortableText
+      value={blocks}
+      components={{
+        types: {
+          image: SanityImage,
+        }
+      }}
+    />  
   </article>

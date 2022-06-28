@@ -3,11 +3,12 @@
 
 	export let items: Array<T>;
 	export let emptyMessage: string = "List empty!";
+  export let listClass: string
 </script>
 
 <slot name="title" />
 
-<ul class="">
+<ul class={listClass}>
   {#each items as item}
     <slot name="item" {item} />
   {:else}

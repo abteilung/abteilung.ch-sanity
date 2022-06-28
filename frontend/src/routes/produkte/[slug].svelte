@@ -1,37 +1,32 @@
 <script lang="ts" context="module">
   import type { Load } from '@sveltejs/kit';;
   import { blocksToText } from '$lib/utils/blocksToText';
-  
+
   export const load: Load = async ({ url, params, fetch }) => {
     const { slug } = params;
-    const res = await fetch(`/agentur/${slug}.json`);
-    
+    const res = await fetch(`/produkte/${slug}.json`);
+
 		if (res.ok) {
-      const { name, bio, image, slug } = await res.json() as Author;
-      
+      const { title, bio, mainImage, slug } = await res.json() as Post;
+
 			return {
-        props: {
-          name,
-          bio,
-          image,
+				props: {
+          title,
+          mainImage,
           slug,
-          blocks: bio,
 				}
 			};
 		}
-    
+
 		return {
-      status: res.status,
-			error: new Error(`Could not load '/agentur/${slug}.json'`)
+			status: res.status,
+			error: new Error(`Could not load '/produkte/${slug}.json'`)
 		};
   }
 </script>
 
 <script lang="ts">
   import SEO from "svelte-seo";
-  import SanityImage from "$lib/components/SanityImage.svelte";
-  import Link from '$lib/Link.svelte'
-
   import { PortableText } from '@portabletext/svelte';
   import type { CustomBlockComponents, CustomSpanComponents } from 'sveltekit-pote';
 
@@ -45,14 +40,13 @@
     highlight: HighlightMark,
   };
 
-  export let name: string;
+  export let title: string;
   export let slug: string;
-  export let image: ImageProps;
-  export let bio: Sanity.Schema.BlockContent;
+  export let mainImage: ImageProps;
   export let blocks: Sanity.Schema.BlockContent;
 
   let url: string;
-  $: url = `https://abteilung.ch/agentur/${slug}`;
+  $: url = `https://abteilung.ch/produkte/${slug}`;
 </script>
 
 <div class="mb-4 sm:mb-24">
@@ -64,20 +58,6 @@
 
   </div>
   <article class="mt-4 w-full">
-
-    <SanityImage {image} loading="eager" imageClass="card-image group-hover:scale-105 duration-300" />
-
-    <PortableText
-      value={bio}
-      components={{
-        types: {
-          image: SanityImage,
-        },
-        marks: {
-          link: Link
-        }
-      }}
-    />    
-
+    <PortableText blocks={[blocks]} {customBlockComponents} {customSpanComponents} />
   </article>
 </div>

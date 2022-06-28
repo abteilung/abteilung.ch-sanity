@@ -31,11 +31,9 @@
 <h1>Agentur</h1>
 
 <div class="mb-12 sm:mb-24">
-    <List items={authors} let:item>
+    <List items={authors} let:item listClass="grid-cols-3 grid gap-6">
       <h2 slot="title" id="posts" class="text-xl flex items-center space-x-2">
-        <a href="/agentur" sveltekit:prefetch class="hover:underline">
           Agentur
-        </a>
       </h2>
       <AuthorListItem slot="item" name={item.name} slug={item.slug} image={item.image} />
     </List>

@@ -14,13 +14,11 @@ const query = groq`
       ...,
       _type == 'figure' => {
         ...,
-        image { asset-> }
+        mainImage { asset-> }
       }
     }
   }
 `;
-
-export type QueryResult = Story
 
 export const get = async ({ params }) => {
   const { slug } = params;
@@ -49,7 +47,7 @@ export const get = async ({ params }) => {
         ...result,
         body: transformedBody ?? [],
         // members: transformedMembers ?? [],
-        mainImage: result.mainImage ? generateImages(result.mainImage) : null,
+        image: result.image ? generateImages(result.image) : null,
         publishedAt: result.publishedAt ? format(parseISO(result.publishedAt), "MMMM ''yy") : "N/A"
       },
       headers: { 'Content-Type': 'application/json' },

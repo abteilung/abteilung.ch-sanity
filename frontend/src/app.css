@@ -4,8 +4,9 @@
 
 @layer base {
     body {
-        @apply bg-base-100;
+        @apply bg-base-100 text-base;
     }
+
     html {
         @apply font-sans font-light;
     }
@@ -56,5 +57,13 @@
 
     h5, .h5, h1.h5, h2.h5, h3.h5 {
         @apply font-headings font-normal text-base;
+    }
+
+    a {
+        @apply hover:underline;
+    }
+
+    main a {
+        @apply underline;
     }
 }

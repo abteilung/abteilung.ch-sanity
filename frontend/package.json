@@ -12,7 +12,6 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
 		"@emagining/sveltekit-pote": "^0.0.5",
 		"@movingbrands/svelte-portable-text": "^0.0.11",
 		"@playwright/test": "^1.22.2",
@@ -25,6 +24,7 @@
 		"@svicons/remix-fill": "^0.1.11",
 		"@tailwindcss/forms": "^0.5.2",
 		"@tailwindcss/line-clamp": "^0.4.0",
+		"@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
 		"@tailwindcss/typography": "^0.5.2",
 		"@types/prismjs": "^1.26.0",
 		"autoprefixer": "^10.4.7",
